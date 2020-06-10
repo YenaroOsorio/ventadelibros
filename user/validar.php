@@ -109,8 +109,7 @@
             if ($valido == 3) {
                 move_uploaded_file($imagen_ruta, $ruta_archivo);
 
-                $query = mysqli_query($link,"SELECT id FROM usuarios WHERE matricula='$matricula'");
-                $propietario = mysqli_fetch_array($query);
+                $query = mysqli_query($link,"update usuarios set imagen='$ruta_archivo_2' where matricula='$matricula';");
                 mysqli_close($link);
                 echo "<h1>Actualizando dato...</h1>";
                 // header('location: usuario.php');
